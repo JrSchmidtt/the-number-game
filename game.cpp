@@ -3,18 +3,21 @@ using namespace std;
 
 int main (){
     cout << "Hello World!\n";
-    int secretNumber = 7; // variable to store the secret number'
+    const int secretNumber = 7;  // constant variable secretNumber
 
     int choice; // variable to store the user's choice
     cout << "Enter your choice: ";
     cin >> choice; // read the user's choice
     cout << "You entered: " << choice << "\n";
 
-    if (choice == secretNumber) {
+    bool isCorrect = (choice == secretNumber); // if the user's choice is equal to the secret number then isCorrect is true 
+    bool isMoreThan = (choice > secretNumber); // if the user's choice is greater than the secret number then isMoreThan is true
+
+    if (isCorrect) {
         cout << "You win!\n";
         return 0;
     }
-    if (choice < secretNumber) {
+    if (isMoreThan) {
         cout << "Too low!\n";
     }
     if (choice > secretNumber) {
