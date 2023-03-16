@@ -22,7 +22,7 @@ int main()
         bool isMoreThan = (choice > secretNumber);            // if the user's choice is greater than the secret number then isMoreThan is true
         double pointsLost = abs(choice - secretNumber) / 2.0; // calculate the points lost abs() is the absolute value function
         score -= pointsLost;                                  // subtract the points lost from the score
-        
+
         if (isCorrect){
             win = true;
         }
@@ -32,10 +32,11 @@ int main()
         if (choice < secretNumber){
             cout << "Too low!\n";
         }
-        cout << "You lose!\n";
     }
     cout << "You win!\n";
     cout << "You took " << tries << " tries to win!\n";
+    cout.precision(2); // set the precision to 2 decimal places
+    cout << fixed;     // set the output to fixed point notation
     cout << "Your score is: " << score << "\n";
     return 0;
 }
